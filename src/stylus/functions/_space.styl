@@ -1,0 +1,8 @@
+space(n = 1, unit = 'rem')
+  if unit == 'em'
+    return px-to-em($base.space * n)
+  else
+    return px-to-rem($base.space * n)
+
+s(n = 1, unit = 'rem')
+  return space(n, unit)

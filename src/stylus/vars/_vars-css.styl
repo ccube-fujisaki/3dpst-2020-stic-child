@@ -1,0 +1,150 @@
+// _vars
+// CSSカスタム変数
+
+:root
+  --base-font-size: 16px
+  --base-line-height: 1.7
+
+  --block-padding-xs: em(3) em(8)
+  --block-padding-sm: em(8) em(12)
+  --block-padding-md: em(12) em(20)
+  --block-padding-lg: em(20) em(30)
+  --block-padding-xl: em(32) em(48)
+
+  --body-background-color: #f8f9fb
+
+  --border-radius-sm-clamp: clamp(6px, 1.2vw, 16px)
+  --border-radius-md-clamp: clamp(12px, 1.5vw, 32px)
+
+  --box-shadow-sm: 0 1rem 1.5rem -1.5rem hsl(200 50% 20% / 20%)
+  --box-shadow-md: 0 1.5rem 2rem -2rem hsl(200 50% 20% / 20%)
+
+  --button-background-color: $color.alpha--black--lighten--1
+  --button-color-submit: $color.blue--darken--2
+  --button-radius: rem(8)
+  --button-color-primary: var(--color-primary)
+  --button-color-secondary: var(--color-secondary)
+
+  --color-primary: $color.light-blue--darken--4
+  --color-secondary: $color.red--darken--2
+
+  --color-text: $color.alpha--black--darken--3
+  --color-subtext: $color.alpha--black
+  --color-background: $color.alpha--blue-gray--lighten--5
+  --color-border $color.alpha--black--lighten--3
+  --color-label-background: $color.alpha--blue-gray--lighten--5
+
+  --container-xs: 540px
+  --container-sm: 768px
+  --container-md: 1024px
+  --container-lg: 1175px
+  --container-xl: 1440px
+  --container-3l: 1920px
+  --container-readable: 45em
+
+  --container-gutter: var(--grid-margin-lg)
+
+  --font-size-h1: clamp(var(--font-size-3l), 3vw, var(--font-size-6l))
+  --font-size-h2: clamp(var(--font-size-xl), 2.1vw, var(--font-size-4l))
+  --font-size-h3: clamp(var(--font-size-lg), 1.5vw, var(--font-size-xl))
+  --font-size-h4: 1rem
+
+  --font-size-xs-clamp: clamp(var(--font-size-3s), 2vw, var(--font-size-xs))
+  --font-size-sm-clamp: clamp(var(--font-size-xs), 2vw, var(--font-size-sm))
+  --font-size-md-clamp: clamp(var(--font-size-sm), 2vw, var(--font-size-md))
+  --font-size-lg-clamp: clamp(var(--font-size-md), 2vw, var(--font-size-lg))
+  --font-size-xl-clamp: clamp(var(--font-size-lg), 2vw, var(--font-size-xl))
+
+  --font-size-em-xs-clamp: clamp(var(--font-size-em-3s), 2vw, var(--font-size-em-xs))
+  --font-size-em-sm-clamp: clamp(var(--font-size-em-xs), 2vw, var(--font-size-em-sm))
+  --font-size-em-md-clamp: clamp(var(--font-size-em-sm), 2vw, var(--font-size-em-md))
+  --font-size-em-lg-clamp: clamp(var(--font-size-em-md), 2vw, var(--font-size-em-lg))
+  --font-size-em-xl-clamp: clamp(var(--font-size-em-lg), 2vw, var(--font-size-em-xl))
+
+
+  --font-size-4s: modular-scale(-4, 1rem, $ratio.major-second)
+  --font-size-3s: modular-scale(-3, 1rem, $ratio.major-second)
+  --font-size-xs: modular-scale(-2, 1rem, $ratio.major-second)
+  --font-size-sm: modular-scale(-1, 1rem, $ratio.major-second)
+  --font-size-md: 16px
+  --font-size-lg: modular-scale(1, 1rem, $ratio.major-second)
+  --font-size-xl: modular-scale(2, 1rem, $ratio.major-second)
+  --font-size-3l: modular-scale(3, 1rem, $ratio.major-second)
+  --font-size-4l: modular-scale(4, 1rem, $ratio.major-second)
+  --font-size-5l: modular-scale(5, 1rem, $ratio.major-second)
+  --font-size-6l: modular-scale(6, 1rem, $ratio.major-second)
+  --font-size-7l: modular-scale(7, 1rem, $ratio.major-second)
+  --font-size-8l: modular-scale(8, 1rem, $ratio.major-second)
+  --font-size-9l: modular-scale(9, 1rem, $ratio.major-second)
+  --font-size-10l: modular-scale(10, 1rem, $ratio.major-second)
+
+  --font-size-em-4s: modular-scale(-4, 1em, $ratio.major-second)
+  --font-size-em-3s: modular-scale(-3, 1em, $ratio.major-second)
+  --font-size-em-xs: modular-scale(-2, 1em, $ratio.major-second)
+  --font-size-em-sm: modular-scale(-1, 1em, $ratio.major-second)
+  --font-size-em-md: 16px
+  --font-size-em-lg: modular-scale(1, 1em, $ratio.major-second)
+  --font-size-em-xl: modular-scale(2, 1em, $ratio.major-second)
+  --font-size-em-3l: modular-scale(3, 1em, $ratio.major-second)
+  --font-size-em-4l: modular-scale(4, 1em, $ratio.major-second)
+  --font-size-em-5l: modular-scale(5, 1em, $ratio.major-second)
+  --font-size-em-6l: modular-scale(6, 1em, $ratio.major-second)
+  --font-size-em-7l: modular-scale(7, 1em, $ratio.major-second)
+  --font-size-em-8l: modular-scale(8, 1em, $ratio.major-second)
+  --font-size-em-9l: modular-scale(9, 1em, $ratio.major-second)
+  --font-size-em-10l: modular-scale(10, 1em, $ratio.major-second)
+
+  --form-control-color: $color.blue--darken--2
+
+  --grid-margin-3s: clamp(rem(3), 0.75vw, rem(6))
+  --grid-margin-xs: clamp(rem(6), 1vw, rem(12))
+  --grid-margin-sm: clamp(rem(6), 1.5vw, rem(18))
+  --grid-margin-md: clamp(rem(6), 2vw, rem(30))
+  --grid-margin-lg: clamp(rem(6), 3vw, rem(48))
+  --grid-margin-xl: clamp(rem(6), 4vw, rem(72))
+  --grid-margin: var(--grid-margin-md)
+
+  --header-textcolor: var(--color-text) // WordPress カスタマイズ
+
+  --icon-select-url: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDEwIDE1Ij48ZyBmaWxsPSIjNDQ0Ij48cGF0aCBkPSJNMCA2bDUtNiA1IDZNMTAgOWwtNSA2LTUtNiIvPjwvZz48L3N2Zz4=')
+
+  --line-height-sm: 1.5
+  --line-height-md: var(--base-line-height)
+
+  --margin-3s: rem(6)
+  --margin-xs: rem(12)
+  --margin-sm: rem(18)
+  --margin-md: rem(30)
+  --margin-lg: rem(48)
+  --margin-xl: rem(72)
+  --margin-line: calc(var(--base-line-height) * 1rem)
+
+  --margin-xs-clamp: clamp(rem(6), 1.5vw, rem(12))
+  --margin-sm-clamp: clamp(rem(12), 2vw, rem(18))
+  --margin-md-clamp: clamp(rem(18), 3vw, rem(28))
+  --margin-lg-clamp: clamp(rem(40), 4vw, rem(48))
+  --margin-xl-clamp: clamp(rem(48), 6vw, rem(72))
+
+  --nav-color: var(--color-text)
+  --nav-background-color: white
+  --nav-button-color: $color.alpha--black--darken--3
+  --nav-button-checked-color: white
+  --nav-padding: rem(18)
+  --nav-drawer-background-color: var(--color-primary)
+  --nav-drawer-color: white
+  --nav-submenu-background-color: $color.gray--lighten--4
+  --nav-submenu-border-color: transparent
+  --nav-submenu-border-width: 2px
+  --nav-submenu-color: var(--nav-color)
+
+  --screen-size-tablet: 415px
+  --screen-size-pc: 960px
+
+  --select-color: var(--button-color-submit)
+  --select-button-size: unit(20 / 16px, 'rem')
+  --select-ripple-size: 1rem
+  --select-checked-size: unit(10 / 16px, 'rem')
+
+  --table-border-color: $color.gray--lighten--3
+  --table-font-size: var(--font-size-sm-clamp)
+  --table-stripe-background-color: $color.gray--lighten--4

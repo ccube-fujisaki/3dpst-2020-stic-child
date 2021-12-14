@@ -1,0 +1,12 @@
+// 値が0なら単位を削除
+unitless-if-zero(value)
+
+  if value is a 'unit'
+    if unit(value, '') == '0'
+      return unit(value, '')
+
+    else
+      return value
+
+  else
+    return value

@@ -1,0 +1,16 @@
+//Modular Scale
+modular-scale(size, base-size, ratio = $ratio.minor-third)
+  scale = 1
+
+  if size > 0
+    for i in (1..size)
+      scale = scale * ratio
+
+  else if size < 0
+    for i in (1..abs(size))
+      scale = scale / ratio
+
+  return round(scale * base-size, 3)
+
+ms(size, base-size, ratio)
+  return modular-scale(size, base-size, ratio)

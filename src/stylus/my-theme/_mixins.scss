@@ -1,0 +1,20 @@
+@mixin content-h2() {
+  position: relative;
+
+  margin: {
+    top: vr(3);
+    bottom: vr(2);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: rem(-24);
+
+    display: block;
+    width: rem(6);
+    background: $color-primary;
+  }
+}

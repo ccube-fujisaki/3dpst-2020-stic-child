@@ -1,0 +1,31 @@
+label()
+  --font-size: var(--font-size-em-sm-clamp)
+  font-size: var(--font-size)
+  display: inline-block
+  margin-x: em(3)
+  padding: var(--block-padding-sm)
+  border-radius: em(4)
+  background-color: var(--color-label-background)
+  transform: translateY(-1px)
+  line-height: 1.7
+  text-decoration: none
+
+  &:first-child
+  & + &
+    margin-left: 0
+
+  &._xs_
+    --font-size: var(--font-size-em-3s)
+    padding: var(--block-padding-xs)
+
+  &._sm_
+    --font-size: var(--font-size-em-xs-clamp)
+
+  &._md_
+    --font-size: var(--font-size-em-sm-clamp)
+
+  &._lg_
+    --font-size: var(--font-size-em-md-clamp)
+
+  &._xl_
+    --font-size: var(--font-size-em-lg-clamp)

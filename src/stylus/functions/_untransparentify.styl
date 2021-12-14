@@ -1,0 +1,12 @@
+untransparentify(color, background = #fff)
+  if alpha(color) == 1
+    return color
+
+  else
+    if alpha(background) < 1
+      background = untransparentify(background)
+
+    base = alpha(color, 1)
+    percentage = round(alpha(color) * 100%, 5)
+
+    return mix(base, background, percentage)

@@ -1,0 +1,26 @@
+state(state = 'default')
+  values = $data.state.color
+
+  if saturation($color[state]) == 0%
+    values = $data.state.mono
+
+  background-color: saturation(lightness($color[state], values.lightness.background), values.saturation) !important
+
+  // &:not(.note)
+  //   color: saturation(lightness($color[state], values.lightness.text), values.saturation) !important
+
+  &:not(.not-bordered)
+    border: 1px solid saturation(lightness($color[state], values.lightness.border), values.saturation) !important
+
+  > a
+    if typeof(values.lightness.link-text) == 'rgba'
+      color: values.lightness.link-text
+    else
+      color: saturation(lightness($color[state], values.lightness.link-text), values.saturation)
+
+  .icon--state
+    color: saturation(lightness($color[state], values.lightness.text), values.saturation) !important
+
+for item in $data.state.list
+  .state--{item}
+    state(item)

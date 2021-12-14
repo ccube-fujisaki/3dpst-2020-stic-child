@@ -1,0 +1,26 @@
+table()
+  font-size: var(--table-font-size)
+  block-margin()
+  border-collapse: collapse
+  width: 100%
+  background-color: white
+  caption-side: bottom
+
+  th
+  td
+    padding: rem(10) rem(12)
+
+  th
+    text-align: left
+
+table-border()
+  th
+  td
+    border: 1px solid transparent
+    border-color: var(--table-border-color)
+
+table-stripe()
+  border-bottom: 1px solid var(--table-stripe-background-color)
+  tr
+    &:nth-child(odd)
+      background-color: var(--table-stripe-background-color)

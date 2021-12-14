@@ -1,0 +1,30 @@
+
+// vwをベースとした、最大最小を指定できる幅
+// prop: cssのプロパティ
+// n: 1vw * n が基準の幅となる
+// min: 最小幅
+// max: 最大幅
+// auto-unit-force: auto-unit()のforce
+spacer(prop, n = $data.spacer.n, min = $data.spacer.min, max = $data.spacer.max, unit = 'rem')
+  base = unit(n, 'vw')
+  {prop}: base
+
+  if typeof(min) != 'null'
+    min-breakpoint = round(min * 100 / unit(base, 'px'))
+
+    if 3200px > min-breakpoint && min-breakpoint > 320px
+      +mq(min-breakpoint, max-width)
+        if unit == 'px'
+          {prop}: unit(min, 'px')
+        else
+          {prop}: rem(min)
+
+  if typeof(max) != 'null'
+    max-breakpoint = round(max * 100 / unit(base, 'px'))
+
+    if 3200px > max-breakpoint && min-breakpoint > 320px
+      +mq(max-breakpoint)
+        if unit == 'px'
+          {prop}: unit(max, 'px')
+        else
+          {prop}: rem(max)

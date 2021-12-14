@@ -1,0 +1,13 @@
+// pxをemに変換
+px-to-em(pxval, base = 16px)
+  return unitless-if-zero(unit(pxval / base, 'em'))
+
+em(pxval, base = 16px)
+  return px-to-em(pxval, base)
+
+// pxをremに変換
+px-to-rem(pxval)
+  return unitless-if-zero(unit(pxval / 16px, 'rem'))
+
+rem(pxval)
+  return px-to-rem(pxval)

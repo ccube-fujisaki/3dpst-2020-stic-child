@@ -1,0 +1,30 @@
+heading()
+  font-size: var(--font-size)
+  font-weight: bold
+  margin-top: var(--margin-top)
+  margin-bottom: var(--margin-bottom)
+  line-height: var(--line-height-sm)
+
+h1()
+  --font-size: var(--font-size-h1)
+  --margin-top: clamp(2em, 10vw, 3em)
+  --margin-bottom: clamp(1.5em, 10vw, 2.25em)
+  heading()
+
+h2()
+  --font-size: var(--font-size-h2)
+  --margin-top: clamp(2em, 10vw, 3em)
+  --margin-bottom: clamp(1em, 10vw, 1.5em)
+  heading()
+
+h3()
+  --font-size: var(--font-size-h3)
+  --margin-top: clamp(2em, 10vw, 3em)
+  --margin-bottom: 1em
+  heading()
+
+h4()
+  --font-size: var(--font-size-h4)
+  --margin-top: clamp(2em, 10vw, 3em)
+  --margin-bottom: 1em
+  heading()

@@ -1,0 +1,7 @@
+auto-color(color, light-color = $color.alpha--black--darken--4, dark-color = white)
+  color = untransparentify(color)
+
+  if lightness(color) > 70%
+    return light-color
+  else
+    return dark-color

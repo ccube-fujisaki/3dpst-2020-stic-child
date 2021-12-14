@@ -1,0 +1,22 @@
+// $size の key から範囲指定して取り出す
+// zero サイズ値が0の場合も出力するか
+// size-keys(min = 'xs', max = 'xl', zero = true)
+//   all-keys = keys($size)
+//   keys = ()
+//   flag = false
+
+//   for key in all-keys
+//     if key == min
+//       flag = true
+
+//     if flag
+//       if zero
+//         push(keys, key)
+//       else
+//         if $size[key] != 0
+//           push(keys, key)
+
+//     if key == max
+//       flag = false
+
+//   return keys

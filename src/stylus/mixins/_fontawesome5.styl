@@ -1,0 +1,32 @@
+-fontawesome5-common(content, type)
+  if type == 'fas'
+    font-weight = 900
+  else if type == 'fal'
+    font-weight = 300
+  else
+    font-weight = 400
+
+  content: content
+  font-weight: font-weight
+
+//fontawesome5のアイコン
+fontawesome5-js(content, type)
+  -fontawesome5-common(content, type)
+  if type == 'fas'
+    font-family = 'Font Awesome 5 Solid'
+  else if type == 'fal'
+    font-family = 'Font Awesome 5 Light'
+  else if type == 'far'
+    font-family = 'Font Awesome 5 Regular'
+  else if type == 'fab'
+    font-family = 'Font Awesome 5 Brands'
+
+  font-family: font-family
+  display: none
+
+fontawesome5(content, type)
+  fontasesome5-js(content, type)
+
+fontawesome5-css(content, type)
+  -fontawesome5-common(content, type)
+  font-family: 'Font Awesome 5 Free'

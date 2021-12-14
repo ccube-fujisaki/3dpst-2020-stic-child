@@ -1,0 +1,9 @@
+line(n = 1, unit = 'rem')
+  line = unit($data.line-height.md, '')
+
+  if unit == 'rem'
+    return unit(line, 'rem') * n
+  else if unit == 'em'
+    return unit(line, 'em') * n
+  else
+    return line * n

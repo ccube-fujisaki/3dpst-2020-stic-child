@@ -1,0 +1,7 @@
+// emをpxに変換
+em-to-px(pxval, base = 16px)
+  return unit(pxval * base, 'px')
+
+// remをpxに変換
+rem-to-px(pxval)
+  return unit(pxval * $basefont-size, 'px')

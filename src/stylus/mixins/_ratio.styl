@@ -1,0 +1,23 @@
+// ブロックの比率を設定する
+// width:height 16:9なら 16 9
+ratio(args = 16 9)
+  ratio = percentage(args[1] / args[0])
+  display: block
+  position: relative
+  width: 100%
+  overflow: hidden
+
+  &::before
+    content: ''
+    display: block
+    padding-top: ratio
+
+  img
+    position: absolute
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+    width: 100%
+    height: 100%
+    object-fit: cover

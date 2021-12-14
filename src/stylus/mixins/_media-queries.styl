@@ -1,0 +1,18 @@
+// // Media Queries
+
+mq(size, key = min-width, range = screen)
+  screen-size = convert-if-has-key-exists(size, $screen-size)
+
+  if key == max-width && unit(screen-size, '') > 0
+    screen-size = unit(screen-size - 1, 'px')
+  else
+    screen-size = unit(screen-size, 'px')
+
+  mq-string = '%s and (%s: %s)' % (range key screen-size)
+
+  if screen-size == 0
+    {block}
+
+  else if screen-size > 0
+    @media mq-string
+      {block}

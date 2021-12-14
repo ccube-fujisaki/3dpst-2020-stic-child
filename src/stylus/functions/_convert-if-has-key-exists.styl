@@ -1,0 +1,7 @@
+// リストにキーが存在すれば対応する値を返す。なければそのまま返す
+convert-if-has-key-exists(key, list)
+  if key in list
+    return list[key]
+
+  else
+    return key

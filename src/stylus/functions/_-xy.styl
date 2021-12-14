@@ -1,0 +1,8 @@
+// marginやpaddingの縦横を一括指定するためのベース
+-xy(prop-first, prop-second, args)
+  important = pop-important-string(args)
+  first = args[0]
+  last = args[-1]
+
+  {prop-first}: first important
+  {prop-second}: last important

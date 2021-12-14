@@ -1,0 +1,11 @@
+-font-size(size = 'md', unit = 'rem')
+  if size in keys($size)
+    size = $data.font-size[size]
+    if unit == 'rem'
+      font-size: px-to-rem(size)
+
+    else if unit == 'em'
+      font-size px-to-em(size)
+
+  else
+    font-size: size

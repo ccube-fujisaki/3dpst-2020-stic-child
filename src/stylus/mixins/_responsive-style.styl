@@ -1,0 +1,7 @@
+// hashをもとにレスポンシブなスタイルを生成
+
+responsive-style(hash)
+  for prop, items in hash
+    for size, val in items
+      +mq(size)
+        {prop}: val

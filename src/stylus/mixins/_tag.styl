@@ -1,0 +1,15 @@
+tags()
+  display: flex
+  flex-wrap: wrap
+
+tag()
+  label()
+  --font-size: var(--font-size-xs)
+  font-size: var(--font-size)!important
+
+  text-decoration: none
+  color: var(--color-subtext)
+  margin: auto rem(3) rem(3) 0 !important
+
+  &:before
+    content: '#'
