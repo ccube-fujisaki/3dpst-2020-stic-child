@@ -32,7 +32,7 @@
 		'numberposts'    => -1,
 		'orderby'        => 'post_date',
 		'order'          => 'DESC',
-		'post_type'      => array('post', 'page', 'sample', 'q-and-a', 'download', 'material'),
+		'post_type'      => array('post', 'page', 'sample', 'q-and-a', 'download', 'material', 'hardware'),
 		'post_status'    => 'pending',
 		'author'         => $author_id,
 	);
@@ -63,4 +63,4 @@
 			<div>このユーザーの公開前の記事はありません。</div>
 		</div>
 	<?php endif; ?>
-<?php endif; ?>
+<?php endif;
