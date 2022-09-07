@@ -183,6 +183,14 @@ function custom_enqueue_scripts()
     filemtime(get_theme_file_path('assets/style.css')),
     'all'
   );
+
+  wp_enqueue_style(
+    '3dpst-add',
+    get_theme_file_uri('assets/style-add.css'),
+    array('3dpst'),
+    '',
+    'all'
+  );
 }
 
 add_action('init', 'stic_custom_post_types');
@@ -682,3 +690,20 @@ add_filter(
     return preg_replace($search, '$1', $title);
   }
 );
+
+function stic_get_the_category($classname = null)
+{
+  $categories  = get_the_category();
+
+  foreach ($categories as $category) {
+    echo sprintf('<a class="c-meta__a %s-%s" href="%s" rel="tag"%s>%s</a>', $category->taxonomy, $category->slug, get_category_link($category->term_id), $classname, $category->cat_name);
+  }
+
+
+  // $classname = !is_null($classname) ? sprintf(' class="%s"', $classname) : '';
+  // $category  = get_the_category();
+
+  // if ($category[0]) {
+  //   return sprintf('<a class="c-meta__a %s-%s" href="%s" rel="tag"%s>%s</a>', $category[0]->taxonomy, $category[0]->slug, get_category_link($category[0]->term_id), $classname, $category[0]->cat_name);
+  // }
+}

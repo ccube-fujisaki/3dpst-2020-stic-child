@@ -7,8 +7,29 @@
     </div>
   </div>
 
-  <?php
 
+  <?php if (is_home() || is_archive()) : ?>
+    <div class="blog-nav">
+      <div class="c-container _lg_">
+        <div class="blog-nav-list">
+          <a class="blog-nav-item blog-nav-all" href=" <?php echo home_url('blog'); ?>">ALL</a>
+          <?php
+          $args = [
+            'order' => 'ASC',
+            'orderby' => 'menu_order'
+          ];
+          foreach (get_categories($args) as $category) {
+            $current = is_category($category->slug) ? 'current' : '';
+
+            printf('<a href="%s" class="blog-nav-item blog-nav-%s %s">%s</a>', get_category_link($category->term_id), $category->slug, $current, $category->cat_name);
+          }
+          ?>
+        </div>
+      </div>
+    </div>
+  <?php endif; ?>
+
+  <?php
   if (is_page('hardwares') || is_post_type_archive('hardware') || is_tax(['hardware-series', 'hardware-type', 'hardware-genre'])) {
 
     get_template_part('layout/content-body-archive', 'column-2-right-sidebar');
