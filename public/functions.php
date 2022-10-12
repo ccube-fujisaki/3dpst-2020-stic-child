@@ -31,6 +31,23 @@ add_action(
   function () {
     register_sidebar(
       array(
+        'id'            => 'sidebar-page',
+        'name'          => '固定ページ',
+        'description'   => '固定ページに表示されます',
+        'before_widget' => '<div id="%1$s" class="c-widget__item _%1$s_ %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="c-widget__title"><span>',
+        'after_title'   => '</span></h2>',
+      )
+    );
+  }
+);
+
+add_action(
+  'widgets_init',
+  function () {
+    register_sidebar(
+      array(
         'id'            => 'sidebar-hardware',
         'name'          => 'ハードウェア',
         'description'   => 'ハードウェアのページに表示されます',
@@ -108,6 +125,15 @@ function get_the_content_material_library($content)
   return $content;
 }
 
+function get_the_content_material_library_2022($content)
+{
+  ob_start();
+  get_template_part('project/content-body-material-library-2022');
+  $content .= ob_get_clean();
+
+  return $content;
+}
+
 function get_the_content_preview($content)
 {
   ob_start();
@@ -180,15 +206,15 @@ function custom_enqueue_scripts()
     '3dpst',
     get_theme_file_uri('assets/style.css'),
     array('stic'),
-    filemtime(get_theme_file_path('assets/style.css')),
+    '',
     'all'
   );
 
   wp_enqueue_style(
     '3dpst-add',
-    get_theme_file_uri('assets/style-add.css'),
+    get_theme_file_uri('dist/style-add.css'),
     array('3dpst'),
-    '',
+    '2022-09-21 15:53:29',
     'all'
   );
 }

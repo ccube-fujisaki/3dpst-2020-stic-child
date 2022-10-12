@@ -19,9 +19,9 @@
     </header>
 
     <?php
-    if (get_post_meta(get_the_ID(), 'stic_display_eyecatch', true) !== 'hide') {
-      get_template_part('component/eyecatch', 'inline');
-    }
+    // if (get_post_meta(get_the_ID(), 'stic_display_eyecatch', true) !== 'hide') {
+    //   get_template_part('component/eyecatch', 'inline');
+    // }
     ?>
 
     <div class="c-entry__body">

@@ -1,159 +1,161 @@
 <?php
 add_action('init', 'c3_custom_post_types');
-function c3_custom_post_types() {
+function c3_custom_post_types()
+{
 
-	$slug   = 'material';
-	$name   = '材料ライブラリ';
-	$labels = stic_custom_post_type_label($name);
-	$args   = array(
-		'labels'              => $labels,
-		'description'         => '材料ライブラリデータを追加します。',
-		'public'              => true,
-		'exclude_from_search' => false,
-		'publicly_queryable'  => true,
-		'show_ui'             => true,
-		'show_in_nav_menus'   => true,
-		'show_in_menu'        => true,
-		'show_in_admin_bar'   => true,
-		'show_in_rest'        => true,
-		'rest_base'           => 'material',
-		'menu_position'       => 20,
-		'menu_icon'           => null,
-		'hierarchical'        => true,
-		'taxonomies'          => array(),
-		'has_archive'         => false,
-		'supports'            => array(
-			'title',
-			'editor',
-			'author',
-			'thumbnail',
-			// 'excerpt',
-			'trackbacks',
-			// 'custom-fields',
-			// 'comments',
-			'revisions',
-			// 'post-formats'
-		),
-	);
-	register_post_type($slug, $args);
+  $slug   = 'material';
+  $name   = '材料ライブラリ';
+  $labels = stic_custom_post_type_label($name);
+  $args   = array(
+    'labels'              => $labels,
+    'description'         => '材料ライブラリデータを追加します。',
+    'public'              => true,
+    'exclude_from_search' => false,
+    'publicly_queryable'  => true,
+    'show_ui'             => true,
+    'show_in_nav_menus'   => true,
+    'show_in_menu'        => true,
+    'show_in_admin_bar'   => true,
+    'show_in_rest'        => true,
+    'rest_base'           => 'material',
+    'menu_position'       => 20,
+    'menu_icon'           => null,
+    'hierarchical'        => true,
+    'taxonomies'          => array(),
+    'has_archive'         => false,
+    'supports'            => array(
+      'title',
+      'editor',
+      'author',
+      'thumbnail',
+      // 'excerpt',
+      'trackbacks',
+      // 'custom-fields',
+      // 'comments',
+      'revisions',
+      // 'post-formats'
+    ),
+  );
+  register_post_type($slug, $args);
 }
 
 add_action('init', 'c3_custom_taxonomies', 0);
-function c3_custom_taxonomies() {
+function c3_custom_taxonomies()
+{
 
-	$slug        = 'material-feature';
-	$object_type = array('material'); // 対応させる投稿タイプ
-	$name        = '材料の特性';
-	$args        = array(
-		'labels'                => stic_custom_taxonomy_label($name),
-		'public'                => true,
-		'show_ui'               => true,
-		'show_in_navs_menus'    => false,
-		'show_tagcloud'         => false,
-		'show_in_quick_edit'    => true,
-		'show_in_rest'          => true,
-		'rest_base'             => 'material-features', // and検索にするため、material-featureをフィルターフック使うのであえて複数形にしてある
-		'meta_box_cb'           => null,
-		'show_admin_column'     => true,
-		'description'           => '材料の特性を選択します。',
-		'hierarchical'          => true,
-		'update_count_callback' => '',
-		'query_var'             => $slug,
-		'rewrite'               => true,
-		'sort'                  => true,
-	);
-	register_taxonomy($slug, $object_type, $args);
+  $slug        = 'material-feature';
+  $object_type = array('material'); // 対応させる投稿タイプ
+  $name        = '材料の特性';
+  $args        = array(
+    'labels'                => stic_custom_taxonomy_label($name),
+    'public'                => true,
+    'show_ui'               => true,
+    'show_in_navs_menus'    => false,
+    'show_tagcloud'         => false,
+    'show_in_quick_edit'    => true,
+    'show_in_rest'          => true,
+    'rest_base'             => 'material-features', // and検索にするため、material-featureをフィルターフック使うのであえて複数形にしてある
+    'meta_box_cb'           => null,
+    'show_admin_column'     => true,
+    'description'           => '材料の特性を選択します。',
+    'hierarchical'          => true,
+    'update_count_callback' => '',
+    'query_var'             => $slug,
+    'rewrite'               => true,
+    'sort'                  => true,
+  );
+  register_taxonomy($slug, $object_type, $args);
 
-	$slug        = 'material-printer';
-	$object_type = array('material'); // 対応させる投稿タイプ
-	$name        = '材料の対応プリンタ';
-	$args        = array(
-		'labels'                => stic_custom_taxonomy_label($name),
-		'public'                => true,
-		'show_ui'               => true,
-		'show_in_navs_menus'    => false,
-		'show_tagcloud'         => false,
-		'show_in_quick_edit'    => true,
-		'show_in_rest'          => true,
-		'rest_base'             => 'mp',
-		'meta_box_cb'           => null,
-		'show_admin_column'     => true,
-		'description'           => '材料に対応するプリンタを選択します。',
-		'hierarchical'          => true,
-		'update_count_callback' => '',
-		'query_var'             => $slug,
-		'rewrite'               => true,
-		'sort'                  => true,
-	);
-	register_taxonomy($slug, $object_type, $args);
+  $slug        = 'material-printer';
+  $object_type = array('material'); // 対応させる投稿タイプ
+  $name        = '材料の対応プリンタ';
+  $args        = array(
+    'labels'                => stic_custom_taxonomy_label($name),
+    'public'                => true,
+    'show_ui'               => true,
+    'show_in_navs_menus'    => false,
+    'show_tagcloud'         => false,
+    'show_in_quick_edit'    => true,
+    'show_in_rest'          => true,
+    'rest_base'             => 'mp',
+    'meta_box_cb'           => null,
+    'show_admin_column'     => true,
+    'description'           => '材料に対応するプリンタを選択します。',
+    'hierarchical'          => true,
+    'update_count_callback' => '',
+    'query_var'             => $slug,
+    'rewrite'               => true,
+    'sort'                  => true,
+  );
+  register_taxonomy($slug, $object_type, $args);
 
-	$slug        = 'material-color';
-	$object_type = array('material'); // 対応させる投稿タイプ
-	$name        = '材料のカラー';
-	$args        = array(
-		'labels'                => stic_custom_taxonomy_label($name),
-		'public'                => true,
-		'show_ui'               => true,
-		'show_in_navs_menus'    => false,
-		'show_tagcloud'         => false,
-		'show_in_quick_edit'    => true,
-		'show_in_rest'          => true,
-		'rest_base'             => 'mc',
-		'meta_box_cb'           => null,
-		'show_admin_column'     => true,
-		'description'           => '材料のカラーを選択します。',
-		'hierarchical'          => true,
-		'update_count_callback' => '',
-		'query_var'             => $slug,
-		'rewrite'               => true,
-		'sort'                  => true,
-	);
-	register_taxonomy($slug, $object_type, $args);
+  $slug        = 'material-color';
+  $object_type = array('material'); // 対応させる投稿タイプ
+  $name        = '材料のカラー';
+  $args        = array(
+    'labels'                => stic_custom_taxonomy_label($name),
+    'public'                => true,
+    'show_ui'               => true,
+    'show_in_navs_menus'    => false,
+    'show_tagcloud'         => false,
+    'show_in_quick_edit'    => true,
+    'show_in_rest'          => true,
+    'rest_base'             => 'mc',
+    'meta_box_cb'           => null,
+    'show_admin_column'     => true,
+    'description'           => '材料のカラーを選択します。',
+    'hierarchical'          => true,
+    'update_count_callback' => '',
+    'query_var'             => $slug,
+    'rewrite'               => true,
+    'sort'                  => true,
+  );
+  register_taxonomy($slug, $object_type, $args);
 
-	// $slug = 'material-material';
-	// $object_type = [ 'material' ]; // 対応させる投稿タイプ
-	// $name = '材料の材質';
-	// $args = array(
-	// 'labels'                => stic_custom_taxonomy_label( $name ),
-	// 'public'                => true,
-	// 'show_ui'               => true,
-	// 'show_in_navs_menus'    => false,
-	// 'show_tagcloud'         => false,
-	// 'show_in_quick_edit'    => true,
-	// 'show_in_rest'          => true,
-	// 'meta_box_cb'           => null,
-	// 'show_admin_column'     => true,
-	// 'description'           => '材料の材質を選択します。',
-	// 'hierarchical'          => true,
-	// 'update_count_callback' => '',
-	// 'query_var'             => $slug,
-	// 'rewrite'               => true,
-	// 'sort'                  => true
-	// );
-	// register_taxonomy( $slug, $object_type, $args );
+  // $slug = 'material-material';
+  // $object_type = [ 'material' ]; // 対応させる投稿タイプ
+  // $name = '材料の材質';
+  // $args = array(
+  // 'labels'                => stic_custom_taxonomy_label( $name ),
+  // 'public'                => true,
+  // 'show_ui'               => true,
+  // 'show_in_navs_menus'    => false,
+  // 'show_tagcloud'         => false,
+  // 'show_in_quick_edit'    => true,
+  // 'show_in_rest'          => true,
+  // 'meta_box_cb'           => null,
+  // 'show_admin_column'     => true,
+  // 'description'           => '材料の材質を選択します。',
+  // 'hierarchical'          => true,
+  // 'update_count_callback' => '',
+  // 'query_var'             => $slug,
+  // 'rewrite'               => true,
+  // 'sort'                  => true
+  // );
+  // register_taxonomy( $slug, $object_type, $args );
 
-	$slug        = 'material-usage';
-	$object_type = array('material'); // 対応させる投稿タイプ
-	$name        = '材料の用途';
-	$args        = array(
-		'labels'                => stic_custom_taxonomy_label($name),
-		'public'                => true,
-		'show_ui'               => true,
-		'show_in_navs_menus'    => false,
-		'show_tagcloud'         => false,
-		'show_in_quick_edit'    => true,
-		'show_in_rest'          => true,
-		'rest_base'             => 'mu',
-		'meta_box_cb'           => null,
-		'show_admin_column'     => true,
-		'description'           => '材料の用途を選択します。',
-		'hierarchical'          => true,
-		'update_count_callback' => '',
-		'query_var'             => $slug,
-		'rewrite'               => true,
-		'sort'                  => true,
-	);
-	register_taxonomy($slug, $object_type, $args);
+  $slug        = 'material-usage';
+  $object_type = array('material'); // 対応させる投稿タイプ
+  $name        = '材料の用途';
+  $args        = array(
+    'labels'                => stic_custom_taxonomy_label($name),
+    'public'                => true,
+    'show_ui'               => true,
+    'show_in_navs_menus'    => false,
+    'show_tagcloud'         => false,
+    'show_in_quick_edit'    => true,
+    'show_in_rest'          => true,
+    'rest_base'             => 'mu',
+    'meta_box_cb'           => null,
+    'show_admin_column'     => true,
+    'description'           => '材料の用途を選択します。',
+    'hierarchical'          => true,
+    'update_count_callback' => '',
+    'query_var'             => $slug,
+    'rewrite'               => true,
+    'sort'                  => true,
+  );
+  register_taxonomy($slug, $object_type, $args);
 }
 
 
@@ -162,19 +164,20 @@ function c3_custom_taxonomies() {
 
 // material-featureをor検索にする
 add_filter('rest_material_query', 'my_rest_material_query', 10, 2); // rest_{post_type}_query
-function my_rest_material_query($args, $request) {
-	if (isset($request['mf'])) {
-		$features = explode(',', $request['mf']);
-		foreach ($features as $feature) {
-			$args['tax_query'][] = array(
-				'taxonomy' => 'material-feature',
-				'terms'    => $feature,
-				'value'    => 'id',
-			);
-		}
-	}
+function my_rest_material_query($args, $request)
+{
+  if (isset($request['mf'])) {
+    $features = explode(',', $request['mf']);
+    foreach ($features as $feature) {
+      $args['tax_query'][] = array(
+        'taxonomy' => 'material-feature',
+        'terms'    => $feature,
+        'value'    => 'id',
+      );
+    }
+  }
 
-	return $args;
+  return $args;
 }
 
 

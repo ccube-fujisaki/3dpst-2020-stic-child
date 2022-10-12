@@ -1,0 +1,187 @@
+:root {
+  --blog-all: #A3A3A3;
+  --blog-case-study: #766DA0;
+  --blog-3d-print: #BC9766;
+  --blog-hardware: #5772AB;
+  --blog-data: #8C697D;
+  --blog-filament-resin: #578CA3;
+  --blog-information: #578E50;
+}
+
+.blog-nav {
+  list-style: none;
+  margin: 3rem auto 2rem;
+}
+
+.blog-nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.blog-nav-list:has(
+  .blog-nav-case-study:hover,
+  .blog-nav-3d-print:hover,
+  .blog-nav-hardware:hover,
+  .blog-nav-data:hover,
+  .blog-nav-filament-resin:hover,
+  .blog-nav-information:hover,
+  .blog-nav-case-study.current,
+  .blog-nav-3d-print.current,
+  .blog-nav-hardware.current,
+  .blog-nav-data.current,
+  .blog-nav-filament-resin.current,
+  .blog-nav-information.current,
+  ) .blog-nav-all {
+  border-color: transparent;
+}
+
+
+.blog-nav-item {
+  border: 1px solid transparent;
+  padding: 0.375rem 1rem;
+  color: inherit;
+  font-size: 0.875rem;
+  /* width: 8rem; */
+  text-align: center;
+  transition: border-color 0.2s, color 0.2s, background-color 0.2s;
+}
+
+.blog-nav-item:hover {
+  text-decoration: none;
+}
+
+.blog-nav-all {
+  border-color: var(--blog-all);
+}
+
+.blog-nav-all:hover {
+  background-color: var(--blog-all);
+  color: white;
+}
+
+.blog-nav-case-study:hover,
+.blog-nav-case-study.current {
+  border-color: var(--blog-case-study);
+  color: var(--blog-case-study)
+}
+
+.blog-nav-3d-print:hover,
+.blog-nav-3d-print.current {
+  border-color: var(--blog-3d-print);
+  color: var(--blog-3d-print)
+}
+
+.blog-nav-hardware:hover,
+.blog-nav-hardware.current {
+  border-color: var(--blog-hardware);
+  color: var(--blog-hardware)
+}
+
+.blog-nav-data:hover,
+.blog-nav-data.current {
+  border-color: var(--blog-data);
+  color: var(--blog-data)
+}
+
+.blog-nav-filament-resin:hover,
+.blog-nav-filament-resin.current {
+  border-color: var(--blog-filament-resin);
+  color: var(--blog-filament-resin)
+}
+
+.blog-nav-information:hover,
+.blog-nav-information.current {
+  border-color: var(--blog-information);
+  color: var(--blog-information)
+}
+
+.c-summary._card_ .c-taxonomy {
+  background-color: transparent;
+}
+
+.c-summary._card_ .c-term {
+  background-color: var(--color-primary);
+  padding-left: 0.5rem;
+  transition: 0.2s;
+}
+
+.c-summary._card_:hover ._category-case-study_ {
+  background-color: var(--blog-case-study);
+}
+
+.c-summary._card_:hover ._category-3d-print_ {
+  background-color: var(--blog-3d-print);
+}
+
+.c-summary._card_:hover ._category-hardware_ {
+  background-color: var(--blog-hardware);
+}
+
+.c-summary._card_:hover ._category-data_ {
+  background-color: var(--blog-data);
+}
+
+.c-summary._card_:hover ._category-filament-resin_ {
+  background-color: var(--blog-filament-resin);
+}
+
+.c-summary._card_:hover ._category-information_ {
+  background-color: var(--blog-information);
+}
+
+.c-meta__a {
+  color: inherit;
+  display: inline-block;
+  border: 1px solid #ccc;
+  padding: 0.25rem 0.5rem 0.125rem;
+  border-radius: 0.125rem;
+  transition: 0.2s;
+}
+
+.c-meta__a + .c-meta__a {
+  margin-left: 0.5rem;
+}
+
+.c-meta .category-case-study:hover {
+  border-color: var(--blog-case-study);
+  color: var(--blog-case-study);
+}
+
+.c-meta .category-hardware:hover {
+  border-color: var(--blog-hardware);
+  color: var(--blog-hardware);
+}
+
+.c-meta .category-3d-print:hover {
+  border-color: var(--blog-3d-print);
+  color: var(--blog-3d-print);
+}
+
+.c-meta .category-filament-resin:hover {
+  border-color: var(--blog-filament-resin);
+  color: var(--blog-filament-resin);
+}
+
+.c-meta .category-information:hover {
+  border-color: var(--blog-information);
+  color: var(--blog-information);
+}
+
+@media all and (min-width: 960px) {
+
+  .blog-nav {
+    margin: 3rem auto;
+  }
+  .blog-nav-list {
+    justify-content: flex-start;
+  }
+
+  .blog-nav-item {
+    font-size: 1rem;
+    padding: 0.5rem 1.125rem;
+    min-width: 7rem;
+    /* width: 7.5rem; */
+  }
+}

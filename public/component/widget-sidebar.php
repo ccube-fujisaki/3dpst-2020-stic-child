@@ -2,6 +2,9 @@
   <?php
   if (is_page('hardwares') || get_post_type() === 'hardware') {
     dynamic_sidebar('sidebar-hardware');
+  } elseif (is_page()) {
+
+    dynamic_sidebar('sidebar-page');
   } else {
     dynamic_sidebar('sidebar');
   }

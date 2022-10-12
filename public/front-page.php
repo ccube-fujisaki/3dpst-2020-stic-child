@@ -17,13 +17,13 @@
 
 </section>
 
-<section style="padding: 3rem 0;">
-  <a href="<?php echo home_url('7810'); ?>" target="_blank" style="max-width: 840px; margin: auto; display: block;">
-    ここに画像 Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+<section style="padding: 3rem 1.5rem; max-width: 640px; margin: auto;">
+  <a href="<?php echo home_url('7810#link-sample'); ?>" target="_blank" style="max-width: 840px; margin: auto; display: block;">
+    <img src="<?php echo get_theme_file_uri('/assets/images/minisanpurubanner.jpg'); ?>" alt="3Dプリントを体感してみよう ミニチュアサンプルお申し込みはこちらから">
   </a>
 </section>
 
-<section class="c-post-info">
+<section class=" c-post-info">
   <div class="c-post-info__container container _lg_">
     <?php
     // $category_info_id = 23; //お知らせのカテゴリID
