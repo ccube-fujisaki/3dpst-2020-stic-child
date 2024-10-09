@@ -29,7 +29,6 @@
       }
     }
 
-    var_dump($tax_queries);
     $args = array(
       'posts_per_page' => -1,
       'orderby'        => 'post_date',
