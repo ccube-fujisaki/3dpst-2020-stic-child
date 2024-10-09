@@ -1,11 +1,11 @@
 :root {
-  --blog-all: #A3A3A3;
-  --blog-case-study: #766DA0;
-  --blog-3d-print: #BC9766;
-  --blog-hardware: #5772AB;
-  --blog-data: #8C697D;
-  --blog-filament-resin: #578CA3;
-  --blog-information: #578E50;
+  --blog-all: #a3a3a3;
+  --blog-case-study: #766da0;
+  --blog-3d-print: #bc9766;
+  --blog-hardware: #5772ab;
+  --blog-data: #8c697d;
+  --blog-filament-resin: #578ca3;
+  --blog-information: #578e50;
 }
 
 .blog-nav {
@@ -20,23 +20,9 @@
   justify-content: center;
 }
 
-.blog-nav-list:has(
-  .blog-nav-case-study:hover,
-  .blog-nav-3d-print:hover,
-  .blog-nav-hardware:hover,
-  .blog-nav-data:hover,
-  .blog-nav-filament-resin:hover,
-  .blog-nav-information:hover,
-  .blog-nav-case-study.current,
-  .blog-nav-3d-print.current,
-  .blog-nav-hardware.current,
-  .blog-nav-data.current,
-  .blog-nav-filament-resin.current,
-  .blog-nav-information.current,
-  ) .blog-nav-all {
+.blog-nav-list:has(.blog-nav-case-study:hover, .blog-nav-3d-print:hover, .blog-nav-hardware:hover, .blog-nav-data:hover, .blog-nav-filament-resin:hover, .blog-nav-information:hover, .blog-nav-case-study.current, .blog-nav-3d-print.current, .blog-nav-hardware.current, .blog-nav-data.current, .blog-nav-filament-resin.current, .blog-nav-information.current, ) .blog-nav-all {
   border-color: transparent;
 }
-
 
 .blog-nav-item {
   border: 1px solid transparent;
@@ -64,37 +50,37 @@
 .blog-nav-case-study:hover,
 .blog-nav-case-study.current {
   border-color: var(--blog-case-study);
-  color: var(--blog-case-study)
+  color: var(--blog-case-study);
 }
 
 .blog-nav-3d-print:hover,
 .blog-nav-3d-print.current {
   border-color: var(--blog-3d-print);
-  color: var(--blog-3d-print)
+  color: var(--blog-3d-print);
 }
 
 .blog-nav-hardware:hover,
 .blog-nav-hardware.current {
   border-color: var(--blog-hardware);
-  color: var(--blog-hardware)
+  color: var(--blog-hardware);
 }
 
 .blog-nav-data:hover,
 .blog-nav-data.current {
   border-color: var(--blog-data);
-  color: var(--blog-data)
+  color: var(--blog-data);
 }
 
 .blog-nav-filament-resin:hover,
 .blog-nav-filament-resin.current {
   border-color: var(--blog-filament-resin);
-  color: var(--blog-filament-resin)
+  color: var(--blog-filament-resin);
 }
 
 .blog-nav-information:hover,
 .blog-nav-information.current {
   border-color: var(--blog-information);
-  color: var(--blog-information)
+  color: var(--blog-information);
 }
 
 .c-summary._card_ .c-taxonomy {
@@ -170,7 +156,6 @@
 }
 
 @media all and (min-width: 960px) {
-
   .blog-nav {
     margin: 3rem auto;
   }
