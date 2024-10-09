@@ -3,12 +3,21 @@
 
 // 'post-related-sample' が存在し、かつ配列であり、0番目の要素が存在することを確認
 $related_samples = get_field('post-related-sample');
+
 if (!$related_samples || !is_array($related_samples) || empty($related_samples[0])) {
   return;
 }
 
 // $related_samples が安全に取得できた場合、0番目の要素を使う
-$sample = $related_samples[0];
+// $sample = $related_samples[0];
+
+function extract_ids($array) {
+  return array_map(function ($item) {
+    return $item['id'];
+  }, $array);
+}
+$sample_ids = extract_ids($related_samples);
+
 
 
 $args = array(
@@ -16,12 +25,15 @@ $args = array(
   'numberposts' => -1,
   'orderby' => 'post_date',
   'order' => 'DESC',
-  'include' => $related_samples,
+  'include' => $sample_ids,
   'post_type' => 'sample',
   'post_status' => ['publish', 'draft', 'pending', 'future'],
   'suppress_filters' => true
 );
 
+echo '<pre>';
+
+echo '</pre>';
 if (!$myposts = get_posts($args)) return;
 ?>
 
